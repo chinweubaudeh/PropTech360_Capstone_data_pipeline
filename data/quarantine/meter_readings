@@ -1,0 +1,9 @@
+reading_id,unit_id,reading_month,energy_kwh,rejection_reason
+R000018,P001-U003,2026-06-01,-45.0,negative_kwh
+R000025,P001-U005,2026-01-01,625.48,unknown_unit_id
+R000026,P001-U005,2026-02-01,275.99,unknown_unit_id
+R000027,P001-U005,2026-03-01,947.82,unknown_unit_id
+R000028,P001-U005,2026-04-01,551.22,unknown_unit_id
+R000029,P001-U005,2026-05-01,1089.05,unknown_unit_id
+R000030,P001-U005,2026-06-01,258.96,unknown_unit_id
+R000035,P999-U999,2026-05-01,1205.75,unknown_unit_id
