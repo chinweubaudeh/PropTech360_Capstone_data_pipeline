@@ -1,7 +1,389 @@
-venv/
-.env
+# ==========================================================
+# PropTech360 Data Engineering Capstone
+# .gitignore
+# ==========================================================
+
+
+# ==========================================================
+# PYTHON
+# ==========================================================
+
 __pycache__/
-.pytest_cache/
-.ipynb_checkpoints/
+*.py[cod]
+*$py.class
 *.pyc
+*.pyo
+*.pyd
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+
+# ==========================================================
+# VIRTUAL ENVIRONMENTS
+# ==========================================================
+
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Virtual environment configuration
+pyvenv.cfg
+
+
+# ==========================================================
+# VS CODE
+# ==========================================================
+
+.vscode/
+
+# Uncomment only if you intentionally want to version
+# selected VS Code settings.
+# .vscode/*
+# !.vscode/settings.json
+# !.vscode/extensions.json
+
+
+# ==========================================================
+# JUPYTER NOTEBOOK
+# ==========================================================
+
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+
+# ==========================================================
+# ENVIRONMENT VARIABLES / SECRETS
+# ==========================================================
+
+.env
+.env.*
+!.env.example
+
+*.env
+
+# Local secrets
+secrets/
+credentials/
+*.secret
+*.secrets
+
+
+# ==========================================================
+# DATABASE CREDENTIALS
+# ==========================================================
+
+database.ini
+db.ini
+credentials.ini
+secrets.ini
+
+# PostgreSQL password files
+.pgpass
+pgpass.conf
+
+
+# ==========================================================
+# AWS CREDENTIALS
+# ==========================================================
+
+.aws/
+aws_credentials
+credentials.csv
+
+# Terraform state if Terraform is added later
+*.tfstate
+*.tfstate.*
+.terraform/
+
+
+# ==========================================================
+# APACHE AIRFLOW
+# ==========================================================
+
+# Airflow local database
+airflow.db
+airflow.db-shm
+airflow.db-wal
+
+# Airflow logs
+logs/
+airflow/logs/
+
+# Airflow PID files
+airflow-webserver.pid
+airflow-scheduler.pid
+airflow-triggerer.pid
+
+# Airflow standalone/local configuration containing secrets
+airflow.cfg
+webserver_config.py
+
+# Local Airflow generated files
+airflow.cfg.bak
+standalone_admin_password.txt
+
+# Airflow temporary/runtime files
+airflow_home/
+.airflow/
+
+
+# ==========================================================
+# SPARK / PYSPARK
+# ==========================================================
+
+# Spark temporary directories
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Spark event logs
+spark-events/
+
+# Spark checkpoints
+checkpoints/
+checkpoint/
+
+# Spark temporary files
+*.crc
+_SUCCESS
+
+# Hadoop / Spark temporary files
+.hadoop/
+hadoop_tmp/
+tmp/
+
+# Spark local working directories
+blockmgr-*/
+spark-*/
+pyspark-*/
+
+
+# ==========================================================
+# JAVA
+# ==========================================================
+
+*.class
+*.jar
+*.war
+*.ear
+
+# Keep dependency JARs only if deliberately tracked
+# Uncomment if you plan to commit project-specific JARs:
+# !jars/*.jar
+
+
+# ==========================================================
+# POSTGRESQL
+# ==========================================================
+
+# PostgreSQL dumps/backups
+*.dump
+*.backup
+*.bak
+
+# PostgreSQL local data directory
+pgdata/
+postgres-data/
+
+
+# ==========================================================
+# DATA — RAW / STAGING / QUARANTINE / CURATED
+# ==========================================================
+
+# IMPORTANT:
+# Your assessment may require generated synthetic raw data,
+# quarantine samples and curated examples to be submitted.
+#
+# Therefore the main data directories are NOT globally
+# ignored below.
+
+# Ignore temporary/intermediate files only
+data/tmp/
+data/temp/
+data/cache/
+
+# Large local scratch outputs
+data/scratch/
+
+# Temporary CSV copies
+*.tmp.csv
+*.temp.csv
+
+# Temporary Parquet files
+*.tmp.parquet
+
+# Spark temporary output directories
+data/**/_temporary/
+data/**/.spark-staging/
+
+
+# ==========================================================
+# OPTIONAL — LARGE CURATED PARQUET
+# ==========================================================
+
+#
+# data/curated/property_month_kpis/
+# *.parquet
+
+
+# ==========================================================
+# AWS LOCAL / SAM
+# ==========================================================
+
+.aws-sam/
+samconfig.toml
+
+# Serverless Framework
+.serverless/
+
+
+# ==========================================================
+# LOG FILES
+# ==========================================================
+
+*.log
+*.out
+*.err
+
+log/
+local_logs/
+
+
+# ==========================================================
+# OPERATING SYSTEM FILES
+# ==========================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+.Trash-*
+
+
+# ==========================================================
+# IDE FILES
+# ==========================================================
+
+# PyCharm / IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+
+# ==========================================================
+# PACKAGE / BUILD OUTPUT
+# ==========================================================
+
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+
+*.egg-info/
+.installed.cfg
+*.egg
+
+
+# ==========================================================
+# CACHE
+# ==========================================================
+
+.cache/
+.cache
+pip-wheel-metadata/
+
+
+# ==========================================================
+# TEMPORARY FILES
+# ==========================================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.old
+
+temp/
+tmp/
+
+
+# ==========================================================
+# SECURITY — PRIVATE KEYS / CERTIFICATES
+# ==========================================================
+
+*.pem
+*.key
+*.p12
+*.pfx
+
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+
+# ==========================================================
+# PROJECT-SPECIFIC LOCAL FILES
+# ==========================================================
+
+# Local database connection files
+config/local_config.py
+config/secrets.py
+
+# Local generated test databases
+*.sqlite
+*.sqlite3
+*.db
+
+
+# ==========================================================
+# KEEP IMPORTANT PROJECT FILES
+# ==========================================================
+
+!README.md
+!requirements.txt
+!.gitignore
+!.env.example
+
+# Keep project source directories
+!src/
+!sql/
+!aws/
+!tests/
+
+# Keep DAG source code
+!dags/
+!dags/*.py
