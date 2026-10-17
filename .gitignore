@@ -82,10 +82,11 @@ credentials/
 # DATABASE CREDENTIALS
 # ==========================================================
 
-database.ini
-db.ini
-credentials.ini
-secrets.ini
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=proptech360
+DB_USER=postgres
+DB_PASSWORD=goodlife20
 
 # PostgreSQL password files
 .pgpass
