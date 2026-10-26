@@ -1,0 +1,46 @@
+table_name,constraint_name,definition
+dim_month,dim_month_month_date_not_null,NOT NULL month_date
+dim_month,dim_month_month_name_not_null,NOT NULL month_name
+dim_month,dim_month_month_number_check,CHECK (((month_number >= 1) AND (month_number <= 12)))
+dim_month,dim_month_month_number_not_null,NOT NULL month_number
+dim_month,dim_month_pkey,PRIMARY KEY (month_date)
+dim_month,dim_month_quarter_number_check,CHECK (((quarter_number >= 1) AND (quarter_number <= 4)))
+dim_month,dim_month_quarter_number_not_null,NOT NULL quarter_number
+dim_month,dim_month_year_number_check,CHECK ((year_number >= 2000))
+dim_month,dim_month_year_number_not_null,NOT NULL year_number
+dim_property,dim_property_city_not_null,NOT NULL city
+dim_property,dim_property_pkey,PRIMARY KEY (property_id)
+dim_property,dim_property_property_id_not_null,NOT NULL property_id
+dim_property,dim_property_property_name_not_null,NOT NULL property_name
+fact_property_month,chk_occupied_not_above_total,CHECK ((occupied_units <= total_units))
+fact_property_month,chk_sla_not_above_eligible,CHECK ((sla_compliant_orders <= sla_eligible_orders))
+fact_property_month,fact_property_month_created_at_not_null,NOT NULL created_at
+fact_property_month,fact_property_month_earned_monthly_rent_usd_check,CHECK ((earned_monthly_rent_usd >= (0)::numeric))
+fact_property_month,fact_property_month_earned_monthly_rent_usd_not_null,NOT NULL earned_monthly_rent_usd
+fact_property_month,fact_property_month_energy_intensity_kwh_sqm_check,CHECK (((energy_intensity_kwh_sqm IS NULL) OR (energy_intensity_kwh_sqm >= (0)::numeric)))
+fact_property_month,fact_property_month_energy_kwh_check,CHECK ((energy_kwh >= (0)::numeric))
+fact_property_month,fact_property_month_energy_kwh_not_null,NOT NULL energy_kwh
+fact_property_month,fact_property_month_floor_area_sqm_check,CHECK ((floor_area_sqm > (0)::numeric))
+fact_property_month,fact_property_month_floor_area_sqm_not_null,NOT NULL floor_area_sqm
+fact_property_month,fact_property_month_month_date_not_null,NOT NULL month_date
+fact_property_month,fact_property_month_occupancy_rate_check,CHECK (((occupancy_rate IS NULL) OR ((occupancy_rate >= (0)::numeric) AND (occupancy_rate <= (1)::numeric))))
+fact_property_month,fact_property_month_occupied_units_check,CHECK ((occupied_units >= 0))
+fact_property_month,fact_property_month_occupied_units_not_null,NOT NULL occupied_units
+fact_property_month,fact_property_month_open_orders_check,CHECK ((open_orders >= 0))
+fact_property_month,fact_property_month_open_orders_not_null,NOT NULL open_orders
+fact_property_month,fact_property_month_property_id_not_null,NOT NULL property_id
+fact_property_month,fact_property_month_resolved_orders_check,CHECK ((resolved_orders >= 0))
+fact_property_month,fact_property_month_resolved_orders_not_null,NOT NULL resolved_orders
+fact_property_month,fact_property_month_sla_compliance_rate_check,CHECK (((sla_compliance_rate IS NULL) OR ((sla_compliance_rate >= (0)::numeric) AND (sla_compliance_rate <= (1)::numeric))))
+fact_property_month,fact_property_month_sla_compliant_orders_check,CHECK ((sla_compliant_orders >= 0))
+fact_property_month,fact_property_month_sla_compliant_orders_not_null,NOT NULL sla_compliant_orders
+fact_property_month,fact_property_month_sla_eligible_orders_check,CHECK ((sla_eligible_orders >= 0))
+fact_property_month,fact_property_month_sla_eligible_orders_not_null,NOT NULL sla_eligible_orders
+fact_property_month,fact_property_month_sla_missing_response_orders_check,CHECK ((sla_missing_response_orders >= 0))
+fact_property_month,fact_property_month_sla_missing_response_orders_not_null,NOT NULL sla_missing_response_orders
+fact_property_month,fact_property_month_total_units_check,CHECK ((total_units >= 0))
+fact_property_month,fact_property_month_total_units_not_null,NOT NULL total_units
+fact_property_month,fact_property_month_updated_at_not_null,NOT NULL updated_at
+fact_property_month,fk_fact_month,FOREIGN KEY (month_date) REFERENCES dim_month(month_date)
+fact_property_month,fk_fact_property,FOREIGN KEY (property_id) REFERENCES dim_property(property_id)
+fact_property_month,pk_fact_property_month,"PRIMARY KEY (property_id, month_date)"

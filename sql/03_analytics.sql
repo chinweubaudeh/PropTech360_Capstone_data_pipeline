@@ -235,3 +235,8 @@ FROM vw_portfolio_dashboard
 ORDER BY
     month_date,
     property_id;
+
+
+
+
+

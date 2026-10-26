@@ -1,0 +1,26 @@
+table_name,column_name,data_type,is_nullable
+dim_month,month_date,date,NO
+dim_month,year_number,integer,NO
+dim_month,month_number,integer,NO
+dim_month,month_name,character varying,NO
+dim_month,quarter_number,integer,NO
+dim_property,property_id,character varying,NO
+dim_property,property_name,character varying,NO
+dim_property,city,character varying,NO
+fact_property_month,property_id,character varying,NO
+fact_property_month,month_date,date,NO
+fact_property_month,total_units,integer,NO
+fact_property_month,occupied_units,integer,NO
+fact_property_month,occupancy_rate,numeric,YES
+fact_property_month,earned_monthly_rent_usd,numeric,NO
+fact_property_month,resolved_orders,integer,NO
+fact_property_month,sla_eligible_orders,integer,NO
+fact_property_month,sla_compliant_orders,integer,NO
+fact_property_month,open_orders,integer,NO
+fact_property_month,sla_missing_response_orders,integer,NO
+fact_property_month,sla_compliance_rate,numeric,YES
+fact_property_month,energy_kwh,numeric,NO
+fact_property_month,floor_area_sqm,numeric,NO
+fact_property_month,energy_intensity_kwh_sqm,numeric,YES
+fact_property_month,created_at,timestamp with time zone,NO
+fact_property_month,updated_at,timestamp with time zone,NO

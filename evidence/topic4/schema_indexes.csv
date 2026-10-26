@@ -1,0 +1,8 @@
+tablename,indexname,indexdef
+dim_month,dim_month_pkey,CREATE UNIQUE INDEX dim_month_pkey ON public.dim_month USING btree (month_date)
+dim_property,dim_property_pkey,CREATE UNIQUE INDEX dim_property_pkey ON public.dim_property USING btree (property_id)
+dim_property,idx_property_city,CREATE INDEX idx_property_city ON public.dim_property USING btree (city)
+fact_property_month,idx_fact_energy_intensity,CREATE INDEX idx_fact_energy_intensity ON public.fact_property_month USING btree (energy_intensity_kwh_sqm)
+fact_property_month,idx_fact_month,CREATE INDEX idx_fact_month ON public.fact_property_month USING btree (month_date)
+fact_property_month,idx_fact_occupancy,CREATE INDEX idx_fact_occupancy ON public.fact_property_month USING btree (occupancy_rate)
+fact_property_month,pk_fact_property_month,"CREATE UNIQUE INDEX pk_fact_property_month ON public.fact_property_month USING btree (property_id, month_date)"
