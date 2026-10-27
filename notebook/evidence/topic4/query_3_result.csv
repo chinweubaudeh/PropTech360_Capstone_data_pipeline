@@ -1,0 +1,13 @@
+property_id,property_name,resolved_orders,sla_eligible_resolved_orders,sla_compliant_orders,excluded_unresolved_orders,excluded_missing_response_orders,sla_compliance_rate
+P006,MetroSpace Tower 06,0,0,0,0,0,
+P010,MetroSpace Tower 10,0,0,0,0,0,
+P001,MetroSpace Tower 01,0,0,0,0,0,
+P008,MetroSpace Tower 08,0,0,0,0,0,
+P002,MetroSpace Tower 02,0,0,0,0,0,
+P011,MetroSpace Tower 11,0,0,0,0,0,
+P003,MetroSpace Tower 03,0,0,0,0,0,
+P009,MetroSpace Tower 09,0,0,0,0,0,
+P007,MetroSpace Tower 07,0,0,0,0,0,
+P004,MetroSpace Tower 04,0,0,0,0,0,
+P012,MetroSpace Tower 12,0,0,0,0,0,
+P005,MetroSpace Tower 05,0,0,0,0,0,
